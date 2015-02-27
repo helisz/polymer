@@ -1,2 +1,11 @@
 # polymer
-Hi
+HHHHH     HHHHH     HHHHHHHHH
+ HHHHH   HHHHH    HHHHHHHHHHHHH
+  HHHHH HHHHH    HHHHH     HHHHH
+   HHHHHHHHH     HHHHH     HHHHH
+    HHHHHHH      HHHHH     HHHHH
+     HHHHH       HHHHH     HHHHH
+     HHHHH       HHHHH     HHHHH
+     HHHHH       HHHHH     HHHHH    HHHHH
+     HHHHH        HHHHHHHHHHHHH    HH   HH
+     HHHHH          HHHHHHHHH       HHHHH
