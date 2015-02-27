@@ -1,0 +1,19 @@
+{
+  "name": "polymer-sample",
+  "version": "0.0.0",
+  "authors": [
+    "Chris He Li <helisz101@gmail.com>"
+  ],
+  "description": "test polymer sample",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.5"
+  }
+}
