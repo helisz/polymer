@@ -1,0 +1,28 @@
+<!-- This element is published by Chris in square in Satin -->
+<link rel="import" href="../components/polymer/polymer.html">
+<polymer-element name="infobox-element">
+
+<!-- template -->
+<template>
+	<style> 
+		polyfill-next-selector { content: 'h1'; }
+		h1 {
+			text-align: center;
+			color: #666;
+			margin: 80px 0 10px 0;
+		}
+	</style>
+	<div class="titile">
+		<content select="h1"></content>
+	</div>
+</template>
+
+<!-- function -->
+<script>
+	Polymer({
+		ready : function(){
+
+		}
+	});
+</script>
+</polymer-element>

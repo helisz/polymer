@@ -15,55 +15,58 @@
     }
     .card-header {
       margin-bottom: 10px;
-    }    
-    .card-footer {
-      margin-bottom: 10px;
-    }
-
-    
-    polyfill-next-selector { content: '.card-header .name'; }
-    .card-header ::content .name {
+    }  
+    polyfill-next-selector { content: '.card-header h2'; }
+    .card-header ::content h2 {
       margin: 0;
       font-size: 1.8rem;
       font-weight: 300;
     }
-    
-    polyfill-next-selector { content: '.card-header .avatar'; }
-    .card-header ::content .avatar {
+    polyfill-next-selector { content: '.card-header img'; }
+    .card-header ::content img {
       width: 70px;
       border-radius: 50%;
       margin: 10px;
     }
-
-    polyfill-next-selector { content: '.card-footer .desc'; }
-    .card-content ::content .desc {
-      font-size: 0.9em;
-      margin-bottom: 10px;
+    core-icon-button {
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      color: #636363;
     }
-
-    polyfill-next-selector { content: '.card-footer .tiny'; }
-    .card-content ::content .tiny {
-      font-style: italic;
-      font-size: 1em;
-      margin-bottom: 10px;
-      color: #999;
+    :host([favorite]) core-icon-button {
+      color: #da4336;
     }
     </style>
 
     <!-- CARD CONTENTS GO HERE -->
     <div class="card-header" layout horizontal center>
-      <content select=".avatar"></content>
-      <content select=".name"></content>
+      <content select="img"></content>
+      <content select="h2"></content>
     </div>
-    <div class="card-footer" layout>
-      <content select=".tiny"></content>
-      <content select=".desc"></content>
-    </div>
+
+    <core-icon-button
+      id="favicon"
+      icon="favorite"
+      on-tap="{{favoriteTapped}}">
+    </core-icon-button>
+
     <!-- if others -->
     <content></content>
     
   </template>
   <script>
-  Polymer({});
+  Polymer({
+    publish: {
+      favorite: {
+        value: false,
+        reflect: true
+      }
+    },
+    favoriteTapped: function(event, detail, sender) {
+      this.favorite = !this.favorite;
+      this.fire('favorite-tap');
+    }
+  });
   </script>
 </polymer-element>

@@ -1,0 +1,50 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<polymer-element name="todo-element">
+<template>
+    <style>
+        ul li{
+            list-style: none;
+        }
+        a[on-click]{
+            cursor: pointer;
+        }
+    </style>
+    <input type="text" value="{{item}}">
+    <button on-click="{{addItem}}">add</button>
+    <ul>
+        <template repeat="{{item,itemIndex in list}}">
+            <li>
+                <input type="checkbox" value="{{item.checked}}">
+                <span>{{item.text}}</span>
+                <a data-index="{{itemIndex}}" on-click="{{removeItem}}">&times;</a>
+            </li>
+        </template>
+    </ul>
+    <button on-click="{{doArchive}}">archive</button>
+</template>
+
+<script>
+Polymer({
+    list: [],
+    addItem: function(){
+        this.list.push({
+            text: this.item,
+            checked: false
+        });
+        this.item = '';
+    },
+    removeItem: function(e, detail, sender){
+        var index = sender.attributes['data-index'].value;
+        this.list.splice(index,1);
+    },
+    doArchive: function(){
+        for(var i in this.list){
+            if(this.list[i].checked){
+                this.list.splice(i,1);
+            }
+        }
+    }
+
+});
+</script>
+</polymer-element>
